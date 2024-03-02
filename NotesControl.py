@@ -65,22 +65,49 @@ def filter_notes_by_date():
 
 def main():
     load_notes()
+    # реализация меню № 1
     while True:
-        command = input("Введите команду (добавить, редактировать, удалить, список, фильтр, выход): ")
-        if command == "добавить":
+        print("\nМеню:")
+        print("1. Создать заметку")
+        print("2. Показать список всех заметок")
+        print("3. Редактировать заметку")
+        print("4. Удалить заметку")
+        print("5. Фильтр по дате")
+        print("6. Выйти")
+
+        choice = input("Выберите действие: ")
+
+        if choice == "1":
             add_note()
-        elif command == "редактировать":
-            edit_note()
-        elif command == "удалить":
-            delete_note()
-        elif command == "список":
+        elif choice == "2":
             list_notes()
-        elif command == "фильтр":
-            filter_notes_by_date()
-        elif command == "выход":
+        elif choice == "3":
+            edit_note()
+        elif choice == "4":
+            delete_note()
+        elif choice == "5":
+             filter_notes_by_date()   
+        elif choice == "6":
             break
         else:
-            print("Неправильная команда, попробуйте снова")
+            print("Некорректный выбор. Попробуйте еще раз.")
+
+        # реализация меню № 2
+        # command = input("Введите команду (добавить, редактировать, удалить, список, фильтр, выход): ")
+        # if command == "добавить":
+        #     add_note()
+        # elif command == "редактировать":
+        #     edit_note()
+        # elif command == "удалить":
+        #     delete_note()
+        # elif command == "список":
+        #     list_notes()
+        # elif command == "фильтр":
+        #     filter_notes_by_date()
+        # elif command == "выход":
+        #     break
+        # else:
+        #     print("Неправильная команда, попробуйте снова")
 
 if __name__ == "__main__":
     main()
